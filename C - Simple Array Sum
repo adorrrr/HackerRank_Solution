@@ -1,0 +1,5 @@
+def simpleArraySum():
+  x = input()
+  a = map(int, input().split())
+  print(sum(a))
+simpleArraySum()  
