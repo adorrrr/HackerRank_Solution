@@ -1,0 +1,24 @@
+def plusminus(arr):
+    x = len(arr)
+    pos = neg = zero = 0
+
+    for num in arr:
+        if num > 0:
+            pos += 1
+        elif num < 0:
+            neg += 1
+        else:
+            zero += 1
+
+    pos_fraction = pos / x
+    neg_fraction = neg / x
+    zero_fraction = zero / x
+
+    print("{:.6f}".format(pos_fraction))
+    print("{:.6f}".format(neg_fraction))
+    print("{:.6f}".format(zero_fraction))
+
+if __name__ == '__main__':
+    x = int(input().strip())
+    arr = list(map(int, input().rstrip().split()))
+    plusminus(arr)
