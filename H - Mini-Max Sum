@@ -1,0 +1,15 @@
+def miniMaxSum(arr):
+    n = len(arr)
+    arr.sort()
+    sum = 0
+    sum1 = 0
+    sum2 = 0
+    for i in range(0,n):
+      sum = sum + arr[i]
+    sum1 = sum - arr[0]
+    sum2 = sum - arr[n-1] 
+    print(sum2, sum1)
+
+if __name__ == '__main__':
+    arr = list(map(int, input().rstrip().split()))
+    miniMaxSum(arr)
