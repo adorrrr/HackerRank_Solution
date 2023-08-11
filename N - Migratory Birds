@@ -1,0 +1,23 @@
+def migratoryBirds(arr):
+    # Write your code here
+    x = {}
+    for birds in arr:
+        if birds in x:
+            x[birds] += 1
+        else:
+            x[birds] = 1
+    max_value = max(x.values())
+    max_key = [k for k in x.keys() if x[k] == max_value]
+    min_value = min(max_key)
+    return min_value
+
+if __name__ == '__main__':
+    #fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    arr_count = int(input().strip())
+
+    arr = list(map(int, input().rstrip().split()))
+
+    result = migratoryBirds(arr)
+
+    print(result)
