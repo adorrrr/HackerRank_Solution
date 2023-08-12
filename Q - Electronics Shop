@@ -1,0 +1,25 @@
+import os
+
+def getmoneyspent(k, drv, a):
+    max_sp = -1
+    for keyboard_price in k:
+        for drive_price in drv:
+            total= keyboard_price + drive_price
+            if total <= a and total > max_sp:
+                max_sp = total
+    return max_sp
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+    
+    x = input().split()
+    a = int(x[0])
+    n = int(x[1])
+    m = int(x[2])
+
+    k = list(map(int, input().rstrip().split()))
+    drv = list(map(int, input().rstrip().split()))
+
+    moneyspent = getmoneyspent(k, drv, a)
+    fptr.write(str(moneyspent) + '\n')
+    fptr.close()
