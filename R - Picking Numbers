@@ -1,0 +1,21 @@
+def pickingNumbers(a):
+    max_count = 0
+    for i in a:
+        count = a.count(i) + a.count(i - 1)
+        if count > max_count:
+            max_count = count
+    return max_count
+
+
+if __name__ == '__main__':
+    import os
+
+    n = int(input().strip())
+
+    a = list(map(int, input().rstrip().split()))
+
+    result = pickingNumbers(a)
+
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+    fptr.write(str(result) + '\n')
+    fptr.close()
