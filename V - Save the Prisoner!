@@ -1,0 +1,14 @@
+def saveThePrisoner(n, m, s):
+    last_prisoner = (s + m - 1) % n
+    if last_prisoner == 0:
+        last_prisoner = n
+    return last_prisoner
+
+if __name__ == '__main__':
+    t = int(input().strip())  
+
+    for _ in range(t):     
+        n, m, s = map(int, input().strip().split())
+        result = saveThePrisoner(n, m, s)
+        print(result)
+
