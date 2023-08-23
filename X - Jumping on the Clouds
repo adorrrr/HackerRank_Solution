@@ -1,0 +1,17 @@
+def jumpingOnClouds(c):
+    jump = 0
+    present = 0
+    while present < len(c) - 1:  # We don't need to jump after the last cloud
+        if present + 2 < len(c) and c[present + 2] == 0:
+            jump = jump + 1
+            present = present + 2
+        else:
+            jump = jump + 1
+            present = present + 1
+    return jump
+
+if __name__ == '__main__':
+    n = int(input().strip())
+    c = list(map(int, input().rstrip().split()))
+    result = jumpingOnClouds(c)
+    print(result)
