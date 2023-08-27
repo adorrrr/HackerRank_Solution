@@ -1,0 +1,10 @@
+n= int(input())
+
+for i in range(n):
+   n = int(input())
+   if n == :
+       print(4)
+   else:
+       x = int(pow(2,n+1,10**9+7)
+       x+= 2
+       print(x%(10**9+7))
