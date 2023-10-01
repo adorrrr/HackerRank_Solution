@@ -1,0 +1,22 @@
+import os
+
+def balancedSums(arr):
+    total_sum = sum(arr)
+    left_sum = 0
+
+    for num in arr:
+        if left_sum == total_sum - left_sum - num:
+            return "YES"
+        left_sum += num
+    return "NO"
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+    x = int(input().strip())
+    for y_itr in range(x):
+        a = int(input().strip())
+        arr = list(map(int, input().rstrip().split()))
+
+        result = balancedSums(arr)
+        fptr.write(result + '\n')
+    fptr.close()
