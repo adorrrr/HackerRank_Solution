@@ -1,0 +1,27 @@
+import os
+
+def missingNumbers(arr, brr):
+    count_arr = {}
+    count_brr = {}
+
+    for num in arr:
+        count_arr[num] = count_arr.get(num, 0) + 1
+    for num in brr:
+        count_brr[num] = count_brr.get(num, 0) + 1
+    missing_nums = []
+    for num, count in count_brr.items():
+        if num not in count_arr or count_arr[num] < count:
+            missing_nums.append(num)
+    return sorted(missing_nums)
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+    n = int(input().strip())
+    arr = list(map(int, input().rstrip().split()))
+    m = int(input().strip())
+    brr = list(map(int, input().rstrip().split()))
+    result = missingNumbers(arr, brr)
+
+    fptr.write(' '.join(map(str, result)))
+    fptr.write('\n')
+    fptr.close()
